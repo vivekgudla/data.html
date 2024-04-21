@@ -1,0 +1,52 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('data.json', function(data) {
+       $.each(data.person, function(i, f) {
+          var tblRow = "<tr>" + "<td>"+f.id+"</td>"+ "<td>" + f.firstName + "</td>" +
+           "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" +"<td>"+ f.fatherName +"</td>"+"<td>"+f.MotherName +"</td>"+"<td>"+f.Address+"</td>"+"<td>"+f.Attendence+"</td>"+"<td>"+f.Result+"</td>"+"<td>"+f.MoblieNo+"</td>"+"<td>"+f.Emailid+"</td>"+"</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2"> 
+  <thead>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Job</th>
+            <th>age</th>
+            <th>FatherName</th>
+            <th>MotherName</th>
+            <th>Address</th>
+            <th>Attendence</th>
+            <th>Result</th>
+            <th>Moblie No</th>
+            <th>Email Id</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+</body>
+</html>
